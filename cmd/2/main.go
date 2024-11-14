@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"os"
 	"strconv"
-	"strings"
 	"unicode"
 )
 
@@ -108,8 +107,6 @@ func isValidExpression(expression string) bool {
 
 // Функция для разбиения строки на токены
 func splitExpression(expression string) ([]string, error) {
-	expression = strings.ReplaceAll(expression, " ", "")
-
 	if !isValidExpression(expression) {
 		return nil, fmt.Errorf("invalid expression")
 	}
